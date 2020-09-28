@@ -9,6 +9,7 @@ cache:
 addons:
   ssh_known_hosts: github.com
 before_script:
+  - /usr/bin/python -m pip install pip==19.0.3
   - cd admin
 stages:
   - deploy
