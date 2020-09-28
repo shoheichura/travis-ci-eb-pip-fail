@@ -15,5 +15,5 @@ jobs:
     - stage: deploy
       name: "Deploy App"
       script:
-        # 以下は失敗する。0.16.4.2 にすると成功となる
-        - pip install python-apt==1.1.0b1+ubuntu0.16.4.9
+        # 以下は失敗する。0.16.4.9 にすると成功となる
+        - pip install python-apt==1.1.0b1+ubuntu0.16.4.2
