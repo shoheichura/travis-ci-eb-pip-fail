@@ -1,0 +1,22 @@
+language: php
+sudo: false
+php:
+  - 7.3
+cache:
+  directories:
+    - $HOME/.composer/cache
+    - $HOME/.npm
+addons:
+  ssh_known_hosts: github.com
+before_script:
+  - /usr/bin/python -m pip install --upgrade --user pip
+  - cd admin
+stages:
+  - deploy
+jobs:
+  include:
+    - stage: deploy
+      name: "Deploy App"
+      script:
+        - pip install --upgrade --user -r requirements.txt
+        - eb --version
