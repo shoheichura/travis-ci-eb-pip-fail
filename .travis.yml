@@ -9,7 +9,6 @@ cache:
 addons:
   ssh_known_hosts: github.com
 before_script:
-  - /usr/bin/python -m pip install --upgrade --user pip
   - cd admin
 stages:
   - deploy
