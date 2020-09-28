@@ -18,6 +18,4 @@ jobs:
     - stage: deploy
       name: "Deploy App"
       script:
-        - pip install --upgrade --user -r requirements.txt
-        - pip list
-        - eb --version
+        - pip install python-apt==1.1.0b1+ubuntu0.16.4.9
