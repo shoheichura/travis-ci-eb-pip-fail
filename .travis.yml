@@ -2,13 +2,10 @@ language: php
 sudo: false
 php:
   - 7.3
-cache:
-  directories:
-    - $HOME/.composer/cache
-    - $HOME/.npm
 addons:
   ssh_known_hosts: github.com
 before_script:
+  # 直近で成功したときのpipバージョンに合わせる
   - /usr/bin/python -m pip install pip==19.0.3
   - cd admin
 stages:
@@ -18,4 +15,5 @@ jobs:
     - stage: deploy
       name: "Deploy App"
       script:
+        # 以下は失敗する。0.16.4.2 にすると成功となる
         - pip install python-apt==1.1.0b1+ubuntu0.16.4.9
